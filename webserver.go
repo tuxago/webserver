@@ -4,20 +4,20 @@ import (
 	"net/http"
 )
 
-func what(w http.ResponseWriter, r *http.Request) {
+func simple(w http.ResponseWriter, r *http.Request) {
 	htmlCode := `
 <html>
 	<head>
-		<title>What?</title>
+		<title>Simple Title</title>
 	</head>
 	<body>
-		<h1>What H1?</h1>
+		<h1>Simple</h1>
 	</body>
 </html>`
 	w.Write([]byte(htmlCode))
 }
 
 func main() {
-	http.HandleFunc("/what", what)
+	http.HandleFunc("/simple", simple)
 	http.ListenAndServe(":8080", nil)
 }
